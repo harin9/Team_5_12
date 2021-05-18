@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-
+import matplotlib.pyplot as plt
+import matplotlib
 
 URL = 'https://ko.dict.naver.com/#/main'
 
@@ -41,3 +42,13 @@ max = count_list.index(max(count_list))
 print('')
 print('속담에 가장 많이 언급된 동물 : ', animal_list[max])
 
+matplotlib.rcParams["axes.unicode_minus"]=False
+plt.rc('font', family='Malgun Gothic')
+
+plt.bar(x, count_list)
+plt.xticks(x, animal_list)
+plt.xlabel('동물 이름')
+plt.ylabel('속담 개수')
+plt.title('동물 이름이 들어간 속담 개수')
+
+plt.show()
