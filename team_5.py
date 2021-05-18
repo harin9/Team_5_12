@@ -27,3 +27,17 @@ for animal in ani:
     count = driver.find_element_by_xpath('//*[@id="searchPage_idioms"]/div[1]/div/span[2]/a/label/span[2]').text
 
     driver.find_element_by_id('ac_input').clear()
+
+    print(animal, '-', count)
+    animal_list.append(animal)
+    count_list.append(int(count))
+    x.append(cyc)
+
+print('')
+print(animal_list)
+print(count_list)
+
+max = count_list.index(max(count_list))
+print('')
+print('속담에 가장 많이 언급된 동물 : ', animal_list[max])
+
